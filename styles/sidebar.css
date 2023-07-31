@@ -1,0 +1,21 @@
+.left-side-bar {
+    position: fixed;
+    top: 130px;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.side-bar-icon:hover {
+    background-color: lightgray;
+}

@@ -1,0 +1,147 @@
+
+.header-section {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
+    z-index: 1;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    flex-shrink: 0;
+}
+
+.middle-section {
+    display: flex;
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 1000px;
+    align-items: center;
+}
+
+.right-section {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.record-button {
+    margin-right: 10px;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button {
+    width: 70px;
+    height: 48px;
+    margin-left: -1px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.search-button,
+.record-button,
+.create-icon-box,
+.notification-box,
+.profile-icon-box,
+.notification-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button .tooltip,
+.record-button .tooltip,
+.create-icon-box .tooltip,
+.notification-box .tooltip {
+    background-color: gray;
+    color: white;
+    font-size: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -30px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: opacity 0.15s;
+}
+
+.search-button:hover .tooltip,
+.record-button:hover .tooltip,
+.create-icon-box:hover .tooltip,
+.notification-box:hover .tooltip{
+    opacity: 1;
+}
+
+.search-icon {
+    background-color: white;
+}
+
+.search-bar {
+    font-size: 20px;
+    margin-left: 12px;
+    flex: 1;
+    height: 45px;
+    padding-left: 15px;
+    width: 0;
+}
+
+.record-icon {
+    height: 35px;
+}
+
+.create-icon {
+    width: 40px;
+    cursor: pointer;
+}
+
+.notification-icon {
+    width: 35px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.notification-box {
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    background-color: rgb(212, 14, 14);
+    color: white;
+    font-size: 16px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 15px;
+}
