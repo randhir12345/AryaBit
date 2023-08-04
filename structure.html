@@ -29,12 +29,12 @@
                 1
             </div>
 <pre class="code-snippet-box-content">
-    struct A{
-        int* b;
-        char c;
-        int a;
-        char c2
-    };
+struct A{
+    int* b;
+    char c;
+    int a;
+    char c2
+};
 </pre>
         </div>
 
@@ -43,12 +43,12 @@
                 2
             </div>
 <pre class="code-snippet-box-content">
-    struct B {
-        int* n2;
-        char c1;
-        int n1;
-        char* c2;
-    };
+struct B {
+    int* n2;
+    char c1;
+    int n1;
+    char* c2;
+};
 </pre>
         </div>
 
@@ -58,15 +58,15 @@
                 3
             </div>
 <pre class="code-snippet-box-content">
-    struct C{
-        char character;
-        long long salary;
-        int number;
-        int number2;
-        long double c1;
-    }m;
-    printf("%lu %lu %lu %lu\n", &m.character, &m.salary, &m.number, &m.c1);
-    
+struct C{
+    char character;
+    long long salary;
+    int number;
+    int number2;
+    long double c1;
+}m;
+printf("%lu %lu %lu %lu\n", &m.character, &m.salary, &m.number, &m.c1);
+
 </pre>
         </div>
 
@@ -75,11 +75,11 @@
                 4
             </div>
 <pre class="code-snippet-box-content">
-    struct D {
-        int a;
-        long long b;
-        char c;
-    };
+struct D {
+    int a;
+    long long b;
+    char c;
+};
 
 </pre>
         </div>
@@ -90,15 +90,13 @@
                 5
             </div>
 <pre class="code-snippet-box-content">
-    struct {
-        int bit1: 1;
-        int bit2: 2;
-        int bit3: 3;
-        int bit4: 4;
-        int remainingBits;
-    }obj;
-    
-    
+struct {
+    int bit1: 1;
+    int bit2: 2;
+    int bit3: 3;
+    int bit4: 4;
+    int remainingBits;
+}obj;
 </pre>
         </div>
 
@@ -107,16 +105,15 @@
                 6
             </div>
 <pre class="code-snippet-box-content">
-    struct {
-        char *name;
-        int utype;
-        union {
-        int ival;
-        float fval;
-        char *sval;
-        } u;
-    } s;
-
+struct {
+    char *name;
+    int utype;
+    union {
+    int ival;
+    float fval;
+    char *sval;
+    } u;
+} s;
 </pre>
         </div>
 
@@ -133,23 +130,23 @@
                 1
             </div>
 <pre  class="code-snippet-box-content">
-    struct Test{
-        int a;
-        char name[100];
-        int *p;
-    };
+struct Test{
+    int a;
+    char name[100];
+    int *p;
+};
 
-    int main() {
-    
-        char *ptr = malloc (sizeof(100));
-        strcpy(ptr, "Welcome to Aryabit");
-        struct Test obj1 = {10, "Welcome to Aryabit", ptr}, obj2;
-        obj2 = obj1;
-        obj2.a = 100;
-        strcpy(obj1.name, "Hello Aryabit");
-        strcpy(obj1.p, "Hello Aryabit");
-        printf("%d %s %s\n%d %s %s\n", obj1.a, obj1.name, obj1.p, obj2.a, obj2.name, obj2.p);
-    }
+int main() {
+
+    char *ptr = malloc (sizeof(100));
+    strcpy(ptr, "Welcome to Aryabit");
+    struct Test obj1 = {10, "Welcome to Aryabit", ptr}, obj2;
+    obj2 = obj1;
+    obj2.a = 100;
+    strcpy(obj1.name, "Hello Aryabit");
+    strcpy(obj1.p, "Hello Aryabit");
+    printf("%d %s %s\n%d %s %s\n", obj1.a, obj1.name, obj1.p, obj2.a, obj2.name, obj2.p);
+}
 
 </pre>
         </div>
@@ -159,22 +156,22 @@
                 2
             </div>
 <pre  class="code-snippet-box-content">
-    union Data {
-        int i;
-        float f;
-        char c;
-      };
-      
-      int main()
-      {
-          union Data d;
-          d.i = 0x10;
-          d.f = 1.5;
-          d.c = 'A';
-      
-          printf("%d\n", sizeof(d));
-          printf("%d, %f, %c\n", d.i, d.f, d.c);
-      }      
+union Data {
+    int i;
+    float f;
+    char c;
+    };
+    
+    int main()
+    {
+        union Data d;
+        d.i = 0x10;
+        d.f = 1.5;
+        d.c = 'A';
+    
+        printf("%d\n", sizeof(d));
+        printf("%d, %f, %c\n", d.i, d.f, d.c);
+    }      
 
 </pre>
         </div>
@@ -185,18 +182,18 @@
                 3
             </div>
 <pre  class="code-snippet-box-content">
-    struct {
-        unsigned int bit1: 1;
-        int bit2: 2;
-        unsigned int bit3: 3;
-        unsigned int bit4: 4;
-        unsigned int remainingBits;
-    }obj = {3, 3, 5, 100, 1000};
+struct {
+    unsigned int bit1: 1;
+    int bit2: 2;
+    unsigned int bit3: 3;
+    unsigned int bit4: 4;
+    unsigned int remainingBits;
+}obj = {3, 3, 5, 100, 1000};
 
-    int main()
-    {
-        printf("%d, %d, %d, %d, %d\n", obj.bit1, obj.bit2, obj.bit3, obj.bit4, obj.remainingBits) ;   
-    }
+int main()
+{
+    printf("%d, %d, %d, %d, %d\n", obj.bit1, obj.bit2, obj.bit3, obj.bit4, obj.remainingBits) ;   
+}
 
 </pre>
         </div>
