@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        C Bitwise problems
+    </title>
+    <style>
+
+        pre {
+            white-space: pre-wrap;     
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;    
+            white-space: -o-pre-wrap;  
+            word-wrap: break-word;
+            font-size: 10px;
+        }
+
+        h1,
+        h2 {
+            color: blue;
+        }
+
+        .code-snippet-box {
+            background-color: rgb(237, 210, 214);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 30px;
+            margin-bottom: 5px;
+            flex-wrap: nowrap;
+        }
+
+        .code-snippet-box-si {
+            font-size: 22px;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            @media (min-width: 768px) {
+                font-size: 26px;
+                width: 40px;
+                height: 40px;   
+                border-radius: 20px;
+            };
+            @media (min-width: 1200px) {
+                font-size: 30px;
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+            };
+
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .code-snippet-box-content {
+        }
+
+        .problem-statement-main-box,
+        .code-snippet-box-content {
+            padding-left: 30px;
+            
+            font-size: 16px;
+            @media (min-width: 768px) {
+                font-size: 18px;
+            };
+            @media (min-width: 1200px) {
+                font-size: 20px;
+            };
+        }
+
+        .problem-statement-sub-box {
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Bitwise
+    </h1>
+
+    <h2>Conceptual Problems</h2>
+
+    <div class="problem-statement-main-box">
+
+        <p>1. Explain the different types of bitwise operators in C and describe how they work.</p>
+        <p>2. print the output of the following code snippet.</p>
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                1
+            </div>
+<pre class="code-snippet-box-content">
+    int a = 10, b = 500;
+    for (int i=0; i<5; i++)
+    {
+        printf("%d, %d\n", a, b);
+        a <<= 1;
+        b >>= 1;
+    };
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                2
+            </div>
+<pre class="code-snippet-box-content">
+    int a = 10, b = 11, c = 0;
+    printf("%d, %d\n", a | b, a & b);
+    printf("%d\n", (a || b) | (a && c));
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                3
+            </div>
+<pre class="code-snippet-box-content">
+    int a = 0x1f, b = 0xf1;
+    printf("%d, %d\n", a & b, a | b);
+    printf("%d, %d\n", a >> 6, b >> 6);
+    printf("%d, %d\n", a >> 4, b >> 4, (a >> 4) << 4, (b >> 4) << 4);
+    printf("%d, %d\n", a << 4, b << 4, (a << 4) >> 4, (b << 4) >> 4);
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                4
+            </div>
+<pre class="code-snippet-box-content">
+    int a = -0x1f, b = -0xf1;
+    printf("%d, %d\n", a & b, a | b);
+    printf("%d, %d\n", a >> 6, b >> 6);
+    printf("%d, %d\n", a >> 4, b >> 4, (a >> 4) << 4, (b >> 4) << 4);
+    printf("%d, %d\n", a << 4, b << 4, (a << 4) >> 4, (b << 4) >> 4);
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                5
+            </div>
+<pre class="code-snippet-box-content">
+    unsigned char c = 0xf1;
+    printf("%c, %u\n", ~c, ~c);
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                6
+            </div>
+<pre class="code-snippet-box-content">
+    int a = (1 << 4), b = (1 << 4) - 1;
+    printf("%d, %d\n", a, b);
+</pre>
+        </div>
+
+    </div>
+
+    <h2>Problems</h2>
+
+    <div class="problem-statement-main-box">
+
+        <p>1. write a program to print the binary representation of a given number.</p>
+        <p>2. Create a program that takes decimal number, a start index, and an end index as inputs. The program should then print the binary representation of the bits between the specified start and end indexes(inclusive). </p>
+        <p>3. Write a C program to set and reset specific bits of a given integer number. The program should take the following inputs:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> the decimal number,</p>
+            <p><strong>b.</strong> the position of the bit to set and</p>
+            <p><strong>c.</strong> the position of the bit to reset</p>
+            after performing the operation, the program should display the number and bit pattern of the modified bits.
+        </div>
+        <p>4. Write a program that takes a decimal number, a starting index, and fetches the 4 bits starting from the specified index. Display the decimal value represented by the fetched 4 bits. </p>
+        <p>5. Create a program that takes a decimal number, a starting index, and sets the 4 bits starting from the specified index. Display the bit pattern of modified decimal number.</p>
+        <p>6. Create a program that takes a decimal number, a starting index, and resets(set to 0) the 4 bits starting from the specified index. Display the bit pattern of modified decimal number.</p>
+        <p>7. Write a c program that takes a decimal number, a start index and an end index. The program should set the bits between the specified start and end indexes(inclusive) in the decimal number and print the updated bit pattern.</p>
+        <p>8. Write a c program that takes a decimal number, a start index and an end index. The program should reset the bits between the specified start and end indexes(inclusive) in the decimal number and print the updated bit pattern.</p>
+        <p>9. Write a C program that takes a decimal number and a bit position as inputs. The program should toggle(flip) the value of the bit at the specified position in the binary representation of the decimal number. Display the modified bit pattern.</p>
+        <p>10. You are given two integers, 'source' and 'destination'. Your task is to replace the bits of the 'destination' integer, starting from a specified index, with the corresponding bits from the 'source' integer. Write a C program that takes the following inputs.</p>
+        <div class="problem-statement-sub-box">
+            <p><strong> - </strong> 'source': The integer from which bits will be picked.</p>
+            <p><strong> - </strong> 'source_start_index': The index where the bit picking should start.</p>
+            <p><strong> - </strong> 'destination': The integer where selected bits from the source integer will be placed.</p>
+            <p><strong> - </strong> 'dest_start_index': The index in the destination integer where bits will be replaced.</p>
+            <p><strong> - </strong> 'num_bits': The number of bits to pick and replace.</p>
+        </div>
+        <p>11. Write a C program that an integer as input and counts the number of set(1) and reset(0) bits in its binary representation. Display bit battern and the count of set and reset bits.</p>
+    </div>
+
+</body>
+</html>
