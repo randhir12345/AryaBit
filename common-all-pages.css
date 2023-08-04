@@ -1,5 +1,6 @@
 body {
     margin-top: 90px;
+    user-select: none;
 }
 
 .header {
