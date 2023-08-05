@@ -10,6 +10,10 @@ topics = [
     {
         name: 'Pointer',
         link: 'pointer.html'
+    },
+    {
+        name: 'String',
+        link: 'string.html'
     }
 ]
 

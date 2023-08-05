@@ -17,6 +17,21 @@ h2 {
     color: blue;
 }
 
+h1 {
+    text-align: center;
+}
+
+.topic-slogan {
+    color: gray;
+    text-align: center;
+}
+
+.topic-sub-name {
+    color: blue;
+    text-align: center;
+}
+
+
 .code-snippet-box {
     background-color: rgb(237, 210, 214);
     display: flex;

@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        C String problems
+    </title>
+    <link rel="stylesheet", href="assignment_topics.css">
+    <link rel="stylesheet" href="common-all-pages.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="main_page.html">
+            <img class="logo-image" src="images/logo png.png">
+        </a>
+    </div>
+    <div class="waterdrop-container"></div>
+
+    <h1>String
+    </h1>
+    <p class="topic-slogan">One kind string can change someone's entire day. </p>
+    <p class="topic-slogan">Same way, practicing string can land you near to Goal.</p>
+
+    <h2>Conceptual Problems</h2>
+
+    <div class="problem-statement-main-box">
+
+        <p>1. What is string? How is it different from an array?</p>
+        <p>2. Which format specifier is used to print string?</p>
+        <p>3. What is the difference between the following declarations of strings. Which one is the best method to declare the string?</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Char str[8] = {‘A’, ‘r’, ‘y’, ‘a’, ‘b’, ‘i’, ‘t’};</p>
+            <p><strong>b.</strong> char str[100] = “Aryabit”;</p>
+            <p><strong>c.</strong> char str[] = “Aryabit”;</p>
+            <p><strong>d.</strong> char *str = “Aryabit”;</p>
+        </div>
+        <p>4. Read man pages for following:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> strlen</p>
+            <p><strong>b.</strong> strcpy and strncpy</p>
+            <p><strong>c.</strong> strcmp and strncmp</p>
+            <p><strong>d.</strong> strcat</p>
+            <p><strong>e.</strong> strchr and strrchr</p>
+            <p><strong>f.</strong> strstr</p>
+            <p><strong>g.</strong> strtok</p>
+            <p><strong>h.</strong> memset, memcpy, memcmp, memmove</p>
+        </div>
+        <p>5. How are mem functions different from str functions?</p>
+    </div>
+
+    <h3 class="topic-sub-name">
+        Now let's dive into code
+    </h3>
+
+
+    <div class="problem-statement-main-box">
+
+        <p>6. What will be output:</p>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                1
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char *ptr = "string";
+    char arr[] = "string";
+    printf("sizeof(ptr) = %d, sizeof(arr) = %d\n", sizeof(ptr), sizeof(arr));
+    printf("sizeof(*ptr) = %d\n", sizeof(*ptr));
+    return 0;
+}
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                2
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char arr[] = "ShaktiMaan";
+    printf("%s\n", arr);
+    arr[6] = 0;
+    printf("%s\n", arr);
+    return 0;
+}
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                3
+            </div>
+<pre class="code-snippet-box-content">
+The code should print n. Find errors and correct them.
+int main()
+{
+    char arr[] = "Coding is fun";
+    char *ptr = arr;
+    ptr = ptr + strlen(arr);
+    printf("%c\n", *ptr);
+    return 0;
+}
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                4
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char arr[] = "Aarryyaabbiitt ccooddiinngg";
+    char *ptr = arr;
+    while(*ptr)
+    {
+        printf("%c", *ptr++);
+        ptr++;
+    }
+    return 0;
+}
+</pre>
+        </div>
+
+    </div>
+
+    <h2>Level: Basic</h2>
+
+    <div class="problem-statement-main-box">
+
+        <p>1. Write a program to search for a character in string.</p>
+        <p>2. Write a program to swap the first and last character of a string.</p>
+        <p>3. Write a program to print alternate characters of a string.</p>
+        <p>4. Write a program to print nth alternate characters of a string.</p>
+        <p>5. Write a program to reverse the string in place.</p>
+        <p>6. Write following functions without use of string libraries:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> int my_strlen(char *str); // returns length of string, same as strlen()</p>
+            <p><strong>b.</strong> char * my_strcpy(char *dst, char *src); // copies character from src string to dst string, same as strcpy</p>
+            <p><strong>c.</strong> void * my_memset(void *str, int c, int size); //set c in str for size bytes, same as memset</p>
+            <p><strong>d.</strong> void *my_memcpy(void *dst, void *src, int size); // copy size bytes from src to destination, same as memcpy.</p>
+        </div>
+        <p>7. Write a program to print the frequency of all characters in a string.</p>
+        <p>8. Write a program to remove all occurrences of a given character in string.</p>
+        <p>9. Write a program to check if two strings are the same or not.</p>
+        <p>10. Write a program to check if a string is palindrome or not.</p>
+        <p>11. Write a program to check if two strings are anagram or not.</p>
+        <p>12. Write a program to covert the first character of a word in given string to upper case:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: levelling up with aryabit</p>
+            <p><strong>b.</strong> Output: Levelling Up With Aryabit</p>
+        </div>
+    </div>
+
+    <h3 class="topic-sub-name">
+        LEVEL UP
+    </h3>
+
+    <h2>Level: MEDIUM</h2>
+
+    <div class="problem-statement-main-box">
+        <p>1. Write a program to search a substring in string. Only print the first occurrence.</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: string: "coding is fun", substring: fun</p>
+            <p><strong>b.</strong> Output: yes exists at 11th position.</p>
+        </div>
+
+        <p>2. Write a program to convert a string in upper camel casing.</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: "String is fun for learning"</p>
+            <p><strong>b.</strong> Output: "StringIsFunForLearning"</p>
+        </div>
+
+        <p>3.  Write a program to reverse the word of a given string.</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: "Learning string in a fun way”</p>
+            <p><strong>b.</strong> Output: "gninraeL gnirts ni a nuf yaw"</p>
+        </div>
+
+        <p>4.  Write a program to mirror the characters. In mirror position we change 'a' to 'z', 'b' to 'y' and so on..</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: "abc"</p>
+            <p><strong>b.</strong> Output: "zyx"</p>
+        </div>
+
+        <p>5.  Write a program to convert string to equivalent number:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: "1234"</p>
+            <p><strong>b.</strong> Output: 1234 (in decimal)</p>
+        </div>
+
+        <p>6.  Write a program to find a word in dictionary:</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: dictionary: {"Aryabit", "code", "Fun", "test", "assignment"}; search: "code"</p>
+            <p><strong>b.</strong> Output: yes exists.</p>
+        </div>
+
+    </div>
+
+    <h3 class="topic-sub-name">
+        LEVEL UP
+    </h3>
+    
+    <div class="problem-statement-main-box">
+
+        <p>1. Write a program to validate IP addresses.</p>
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> Input: "127.0.0.1" , Output: valid</p>
+            <p><strong>b.</strong> Input: "127.512.0.1", Output: Not valid // as address value cannot be greater than 255</p>
+            <p><strong>c.</strong> Input: "0.0.0.0", Output: Valid</p>
+        </div>
+
+        <p>Write a program to create a dictionary. For each alphabet you have to enter 10 words
+            maximum.The words will be entered by the user. If a word exists in the dictionary, it
+            should print "world already entered", if the word does not exist in the dictionary then the
+            word should be added at the proper place.User can enter in lower or upper case. Users
+            should be able to print all words present in the dictionary. Use dynamic memory
+            allocation.
+        </p>
+
+        <div class="problem-statement-sub-box">
+            <p><strong>a.</strong> A &rarr; abc, abcd, add</p>
+            <p><strong>b.</strong> B &rarr; be, been</p>
+            <p><strong>c.</strong> C &rarr; cat, cang</p>
+            <p><strong>d.</strong> And so on...</p>
+        </div>
+
+    </div>
+
+    <script src="common-all-pages.js"></script>
+
+</body>
+</html>
