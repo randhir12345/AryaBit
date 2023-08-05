@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height, 
+    width=device-width, initial-scale=1.0, 
+    minimum-scale=1.0, maximum-scale=1.0, 
+    user-scalable=yes, target-densitydpi=device-dpi">
+    <title>
+        C Pointer problems
+    </title>
+    <link rel="stylesheet", href="assignment_topics.css">
+    <link rel="stylesheet" href="common-all-pages.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="main_page.html">
+            <img class="logo-image" src="images/logo png.png">
+        </a>
+    </div>
+    <div class="waterdrop-container"></div>
+
+    <h1>Bitwise
+    </h1>
+
+    <h2>Conceptual Problems</h2>
+
+    <div class="problem-statement-main-box">
+
+        <p>1. What is a pointer? How is it different from primitive data types?</p>
+        <p>2. How do you declare a pointer variable? Declare int, char and float pointer and assign them with addresses of respective data type.</p>
+        <p>3. What is size of pointers: sizeof(int *), sizeof(char *) and sizeof(float *)?</p>
+        <p>4. What is difference between ‘&’ and ‘*’ operator? Explain with examples.</p>
+        <p>What is a NULL, dangling and wild pointer? Why are they used?</p>
+        <p>Can you have a pointer to a pointer? If yes, explain its use.</p>
+        <p>Can you assign an integer variable address to char pointer and vice versa?</p>
+
+        <h2>Practice makes the Coder perfect</h2>
+
+        <p>1. Write the output</p>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                1
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int a = 100;
+    int *ptr = &a;
+    printf(“a = %d, *ptr = %d\n”, a, *ptr);
+    printf(“&a = %u, ptr = %u, &ptr = %u\n”, &a, ptr, &ptr);
+    printf(“*(&a) = %d\n”, *(&a));
+    return 0;
+}
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                2
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int a = 1000;
+    int *ptr = &b;
+    int **ptr2 = &ptr;
+    printf(“a = %d, *ptr = %d, **ptr2 = %d\n”, a, *ptr, **ptr2);
+    printf(“&a=%u, ptr=%u, &ptr=%u, ptr2=%u, &ptr2=%u\n”, &a, ptr, &ptr,
+    ptr2, &ptr2);
+    return 0;
+}
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                3
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int a = 5, *j = NULL;
+    j = &a;
+    printf("%d\n", a * *j * a + *j); 
+    return 0;
+}
+</pre>
+        </div>
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                4
+            </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int a = 100, *b = NULL, *c = NULL;
+    c = &a;
+    
+    b = c;
+    *c++;
+    *b++;
+    a++;
+    printf(“a = %d\n”, a);
+}
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                5
+            </div>
+<pre class="code-snippet-box-content">
+#include <stdio.h>
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int *ptr = arr;
+    printf("%d", *ptr);
+    ptr++;
+    printf(", %d", *ptr);
+    return 0;
+}
+</pre>
+        </div>
+
+
+        <div class="code-snippet-box">
+            <div class="code-snippet-box-si">
+                6
+            </div>
+<pre class="code-snippet-box-content">
+#include <stdio.h>
+int main() 
+{
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr1 = arr;
+    int *ptr2 = &arr[2];
+    printf("%d", ptr2 - ptr1);
+    return 0;
+}
+</pre>
+        </div>
+
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            7
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    const int i = 200;
+    const int* p = &i;
+    (*p)++;
+    printf(“i = %d\n”, i);
+    return 0;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            8
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char *ptr;
+    char string[] = "Learning C at aryabit.";
+    ptr = string;
+    ptr += 14;
+    *ptr = *ptr - 32;
+    printf("%s",ptr);
+    return 0;
+}
+</pre>
+    </div>
+
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            9
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char arr[10] = "Mango", *ptr;
+    ptr = (&arr[1]++);
+    printf("%s",ptr++);
+    
+    return 0;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            10
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int i = 5;
+    void *vptr;
+    vptr = &i;
+    printf("\nValue of iptr = %d ", *vptr);
+    return 0;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            11
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char *ptr = "void pointer";
+    void *vptr;
+    vptr = &ptr;
+    printf("%s" ,<print void pointer string using vptr>);
+    return 0;
+}
+</pre>
+    </div>
+    
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            12
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+
+    char *str = "His";
+    int i;
+    for(i = 0; i < strlen(str); i++)
+    printf("%s", str++);
+    return 0;
+}
+</pre>
+    </div>
+
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            13
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char array[5] = "Knot", *ptr, i, *ptr1;
+    ptr = &array[1];
+    ptr1 = ptr + 3;
+    *ptr1 = 101;
+    for(i = 0; i < 4;i++)
+    printf("%c", *ptr++);
+    return 0;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            14
+        </div>
+<pre class="code-snippet-box-content">
+void fun(int *p)
+{
+    int q = 10;
+    p = &q;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            15
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    int r = 20;
+    int *p = &r;
+    fun(p);
+    printf("%d", *p);
+    return 0;
+}
+</pre>
+    </div>
+
+<h3 class="appreciate-good-work">Good work... Increasing the pace...</h3>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            16
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char *cities[] = {"Delhi", "London", "Sydney"};
+    int **i = &cities[0];
+    printf("%c\n", **i);
+    return 0;    
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            17
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    char* str[] = { "AAAAA", "BBBBB", "CCCCC", "DDDDD" };
+    char** sptr[] = { str + 3, str + 2, str + 1, str };
+    char*** pp;
+    pp = sptr;
+    ++pp;
+    printf("%s", **++pp + 2);
+    return 0;
+}
+</pre>
+    </div>
+
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            18
+        </div>
+<pre class="code-snippet-box-content">
+#include<stdio.h>
+void function(char**);
+int main()
+{
+    char *arr[] = { "ant", "bat", "cat", "dog", "egg", "fly" };
+    function(arr);
+    return 0;
+}
+void function(char **ptr)
+{
+    char *ptr1;
+    ptr1 = (ptr += sizeof(int))[-2];
+    printf("%s\n", ptr1);
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            19
+        </div>
+<pre class="code-snippet-box-content">
+int main()
+{
+    struct node
+    {
+    int a, b, c;
+    };
+    struct node num = {3, 5, 6};
+    struct node *ptr = & num;
+    printf("%d\n", *((int*)ptr + 1 + (3-2)));
+    return 0;
+}
+</pre>
+    </div>
+
+    <div class="code-snippet-box">
+        <div class="code-snippet-box-si">
+            20
+        </div>
+<pre class="code-snippet-box-content">
+Correct the code to print 6.
+void fun(int *a)
+{
+    a = (int*)malloc(sizeof(int));
+}
+int main()
+{
+    int *p;
+    fun(p);
+    *p = 6;
+    printf("%d",*p);
+    return(0);
+}
+</pre>
+    </div>
+
+    <p>2. A static 2D array is represented by <strong>int arr[row][column];</strong>Create a program to allocate memory for 2D array by using a single pointer. Using that pointer insert and print all elements of array.</p>
+    
+</div>
+
+    <script src="common-all-pages.js"></script>
+
+</body>
+</html>

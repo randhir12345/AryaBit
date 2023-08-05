@@ -6,6 +6,10 @@ topics = [
     {
         name: 'Bitwise',
         link: 'bitwise.html'
+    },
+    {
+        name: 'Pointer',
+        link: 'pointer.html'
     }
 ]
 
